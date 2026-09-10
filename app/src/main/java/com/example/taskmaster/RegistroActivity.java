@@ -1,10 +1,10 @@
 package com.example.taskmaster;
 
 import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -35,6 +35,15 @@ public class RegistroActivity extends AppCompatActivity {
             } else if (contrasena.isEmpty()) {
                 etContrasenaRegistro.setError("Ingresa una contraseña");
             } else {
+                 //Espacio donde se guardan los datos
+                SharedPreferences preferencias = getSharedPreferences("Usuario", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferencias.edit();
+
+                editor.putString("usuario",usuario);
+                editor.putString("contrasena",contrasena);
+
+                editor.apply();
+
                 Toast.makeText(this,"Registrado Correctamente", Toast.LENGTH_SHORT).show();
             }
         });
