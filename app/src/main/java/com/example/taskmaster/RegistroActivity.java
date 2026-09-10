@@ -1,6 +1,9 @@
 package com.example.taskmaster;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +18,26 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro);
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> {
+            finish();
+        });
+        Button btnRegistro = findViewById(R.id.btnRegistro);
+        EditText etUsuarioRegistro = findViewById(R.id.etUsuarioRegistro);
+        EditText etContrasenaRegistro = findViewById(R.id.etContrasenaRegistro);
+
+        btnRegistro.setOnClickListener(v -> {
+            String usuario = etUsuarioRegistro.getText().toString().trim();
+            String contrasena = etContrasenaRegistro.getText().toString().trim();
+
+            if (usuario.isEmpty()) {
+                etUsuarioRegistro.setError("Ingresa un usuario");
+            } else if (contrasena.isEmpty()) {
+                etContrasenaRegistro.setError("Ingresa una contraseña");
+            } else {
+                Toast.makeText(this,"Registrado Correctamente", Toast.LENGTH_SHORT).show();
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
