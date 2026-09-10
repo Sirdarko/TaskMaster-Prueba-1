@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //main
     <string name="app_name">TaskMaster</string>
     <string name="Login">Login</string>
     <string name="Nombre">Username</string>
@@ -8,4 +9,8 @@
     <string name="Registrarse">Register</string>
     <string name="PistaUsuario">Enter Username</string>
     <string name="PistaContraseña">Enter Password</string>
+
+    //registro
+    <string name="Registro">User Registration</string>
+    <string name="Volver">Back</string>
 </resources>

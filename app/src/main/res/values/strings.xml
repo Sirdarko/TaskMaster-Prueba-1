@@ -1,6 +1,6 @@
 <resources>
+    //Main
     <string name="app_name">TaskMaster</string>
-
     <string name="Login">Inicio de Sesion</string>
     <string name="Nombre">Nombre de Usuario</string>
     <string name="Contrasena">Contraseña</string>
@@ -8,4 +8,7 @@
     <string name="Registrarse">Registrarse</string>
     <string name="PistaUsuario">ingresa Usuario</string>
     <string name="PistaContraseña">Ingresa Contraseña</string>
+    //Registro
+    <string name="Registro">Registro de Usuario</string>
+    <string name="Volver">Volver</string>
 </resources>
