@@ -17,4 +17,17 @@
     <string name="Imagen_Inicio">Imagen de Inicio</string>
     <string name="Entrar">Continuar</string>
 
+    //Principal
+
+    <string name="nueva_tarea">Nueva Tarea</string>
+    <string name="tarea">Nombre Tarea</string>
+    <string name="categoria">Categoria</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="baja">Baja</string>
+    <string name="media">Media</string>
+    <string name="alta">Alta</string>
+    <string name="completada">Completada</string>
+    <string name="importancia">Importancia</string>
+    <string name="Progreso">Progreso</string>
+    <string name="agregar_tarea">Agregar Tarea</string>
 </resources>

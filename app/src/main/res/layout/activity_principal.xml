@@ -26,7 +26,7 @@
             android:id="@+id/tvNuevaTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NuevaTarea"
+            android:text="@string/nueva_tarea"
             android:textSize="18sp" />
 
         <EditText
@@ -34,6 +34,105 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:hint="@string/tarea"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/tvCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/categoria"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/tvPrioridad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prioridad" />
+
+        <RadioGroup
+            android:id="@+id/rgPrioridad"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbBaja"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/baja" />
+
+            <RadioButton
+                android:id="@+id/rbMedia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/media" />
+
+            <RadioButton
+                android:id="@+id/rbAlta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/alta" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbCompletada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/completada" />
+
+        <TextView
+            android:id="@+id/tvImportancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/importancia"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/rbImportancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/tvProgreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Progreso"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/pbProgreso"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAgregarTarea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/agregar_tarea" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

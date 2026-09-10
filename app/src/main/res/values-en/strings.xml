@@ -18,4 +18,17 @@
     <string name="Bienvenida">Welcome to TaskMaster</string>
     <string name="Imagen_Inicio">Image from Start</string>
     <string name="Entrar">Continue</string>
+
+    //Principal
+    <string name="nueva_tarea">New Task</string>
+    <string name="tarea">Name Tarea</string>
+    <string name="categoria">Category</string>
+    <string name="prioridad">Priority</string>
+    <string name="baja">Low</string>
+    <string name="media">Medium</string>
+    <string name="alta">High</string>
+    <string name="completada">Completed</string>
+    <string name="importancia">Importance</string>
+    <string name="Progreso">Progress</string>
+    <string name="agregar_tarea">Add Task</string>
 </resources>
