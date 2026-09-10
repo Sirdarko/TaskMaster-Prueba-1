@@ -6,5 +6,6 @@
     <string name="Contrasena">Contraseña</string>
     <string name="Ingresar">Ingresar</string>
     <string name="Registrarse">Registrarse</string>
-
+    <string name="PistaUsuario">ingresa Usuario</string>
+    <string name="PistaContraseña">Ingresa Contraseña</string>
 </resources>
