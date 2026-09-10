@@ -1,5 +1,6 @@
 package com.example.taskmaster;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,6 +11,10 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.ProgressBar;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -18,6 +23,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class PrincipalActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -50,6 +56,14 @@ public class PrincipalActivity extends AppCompatActivity {
         CheckBox cbCompletada = findViewById(R.id.cbCompletada);
         RatingBar rbImportancia = findViewById(R.id.rbImportancia);
 
+        LinearLayout layoutTareas = findViewById(R.id.layoutTareas);
+
+        ProgressBar pbProgreso = findViewById(R.id.pbProgreso);
+
+        int[] tareasTotales = {0};
+
+        int[] tareasCompletadas = {0};
+
         btnAgregarTarea.setOnClickListener(v -> {
 
             String tarea = etTarea.getText().toString().trim();
@@ -72,14 +86,36 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 float importancia = rbImportancia.getRating();
 
-                Toast.makeText(
-                        this,
+                tareasTotales[0]++;
+
+                if (completada) {
+                    tareasCompletadas[0]++;
+                }
+
+                int porcentaje =
+                        (tareasCompletadas[0] * 100) / tareasTotales[0];
+
+                pbProgreso.setProgress(porcentaje);
+
+                TextView tvNuevaTarea = new TextView(this);
+
+                tvNuevaTarea.setText(
                         "Tarea: " + tarea +
                                 "\nCategoría: " + categoria +
                                 "\nPrioridad: " + prioridad +
                                 "\nCompletada: " + completada +
-                                "\nImportancia: " + importancia,
-                        Toast.LENGTH_LONG
+                                "\nImportancia: " + importancia +
+                                "\n------------------------"
+                );
+
+                layoutTareas.addView(tvNuevaTarea);
+
+                etTarea.setText("");
+
+                Toast.makeText(
+                        this,
+                        "Tarea agregada correctamente",
+                        Toast.LENGTH_SHORT
                 ).show();
             }
         });

@@ -1,66 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrincipalActivity">
+    android:orientation="horizontal"
+    android:padding="12dp">
 
+    <!-- Parte izquierda: creación de la tarea -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:paddingEnd="8dp">
 
         <TextView
             android:id="@+id/tvTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/app_name"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/tvNuevaTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nueva_tarea"
-            android:textSize="18sp" />
+            android:text="Tarea" />
 
         <EditText
             android:id="@+id/etTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/tarea"
-            android:inputType="text"
-            android:minHeight="48dp" />
+            android:hint="Nombre tarea"
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/tvCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/categoria"
-            android:textSize="16sp" />
+            android:text="Categoría" />
 
         <Spinner
             android:id="@+id/spCategoria"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvPrioridad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/prioridad" />
+            android:text="Prioridad" />
 
         <RadioGroup
             android:id="@+id/rgPrioridad"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
@@ -68,50 +63,61 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/baja" />
+                android:minHeight="48dp"
+                android:text="Baja" />
 
             <RadioButton
                 android:id="@+id/rbMedia"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/media" />
+                android:minHeight="48dp"
+                android:text="Media" />
 
             <RadioButton
                 android:id="@+id/rbAlta"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/alta" />
+                android:minHeight="48dp"
+                android:text="Alta" />
+
         </RadioGroup>
+
+    </LinearLayout>
+
+    <!-- Parte derecha: estado, importancia, progreso y tareas -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
 
         <CheckBox
             android:id="@+id/cbCompletada"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/completada" />
+            android:text="Completada" />
 
         <TextView
             android:id="@+id/tvImportancia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/importancia"
-            android:textSize="16sp" />
+            android:text="Importancia" />
 
         <RatingBar
             android:id="@+id/rbImportancia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="0"
             android:stepSize="1" />
 
         <TextView
             android:id="@+id/tvProgreso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Progreso"
-            android:textSize="16sp" />
+            android:text="Progreso" />
 
         <ProgressBar
             android:id="@+id/pbProgreso"
@@ -121,24 +127,21 @@
             android:max="100"
             android:progress="0" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnAgregarTarea"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:text="Agregar tarea"
+            android:layout_marginTop="8dp" />
 
-            <Button
-                android:id="@+id/btnAgregarTarea"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="@string/agregar_tarea" />
-        </LinearLayout>
-
+        <!-- Aquí aparecerán las tareas agregadas -->
         <LinearLayout
             android:id="@+id/layoutTareas"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
