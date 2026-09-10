@@ -28,14 +28,15 @@ public class MainActivity extends AppCompatActivity {
         EditText etContrasena = findViewById(R.id.etContraseña);
 
         Button btnIngresar = findViewById(R.id.btnIngresar);
-        SharedPreferences preferencias = getSharedPreferences("Usuario", MODE_PRIVATE);
-
-        String usuarioGuardado = preferencias.getString("usuario","");
-        String contrasenaGuardada = preferencias.getString("contrasena","");
 
         btnIngresar.setOnClickListener(v -> {
             String usuario = etUsuario.getText().toString().trim();
             String contrasena = etContrasena.getText().toString().trim();
+
+            SharedPreferences preferencias = getSharedPreferences("Usuario", MODE_PRIVATE);
+
+            String usuarioGuardado = preferencias.getString("usuario","");
+            String contrasenaGuardada = preferencias.getString("contrasena","");
 
             if (usuario.isEmpty()) {
                 etUsuario.setError("Ingresa tu nombre de usuario");
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 etContrasena.setError("Ingresa tu contraseña");
             } else if (usuario.equals(usuarioGuardado) && contrasena.equals(contrasenaGuardada)) {
             Toast.makeText(this,"Sesion iniciada correctamente", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this,InicioActivity.class);
+            startActivity(intent);
             } else {
             Toast.makeText(this,"Usuario o Contraseña Incorrectos", Toast.LENGTH_SHORT).show();
         }

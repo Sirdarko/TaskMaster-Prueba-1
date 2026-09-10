@@ -13,4 +13,9 @@
     //registro
     <string name="Registro">User Registration</string>
     <string name="Volver">Back</string>
+
+    //Inicio
+    <string name="Bienvenida">Welcome to TaskMaster</string>
+    <string name="Imagen_Inicio">Image from Start</string>
+    <string name="Entrar">Continue</string>
 </resources>

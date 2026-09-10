@@ -5,39 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InicioActivity">
+    tools:context=".PrincipalActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
         <TextView
-            android:id="@+id/tvBienvenida"
+            android:id="@+id/tvTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|center_horizontal"
-            android:text="@string/Bienvenida"
+            android:gravity="center"
+            android:text="@string/app_name"
             android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/ivWelcome"
-            android:layout_width="match_parent"
-            android:layout_height="304dp"
-            android:layout_marginTop="10dp"
-            android:alpha="0.6"
-            android:contentDescription="@string/Imagen_Inicio"
-            android:visibility="visible"
-            app:srcCompat="@drawable/iconica_imagen_lofi_girl_104" />
-
-        <Button
-            android:id="@+id/btnEntrar"
+        <TextView
+            android:id="@+id/tvNuevaTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/Entrar" />
+            android:text="NuevaTarea"
+            android:textSize="18sp" />
 
+        <EditText
+            android:id="@+id/etTarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

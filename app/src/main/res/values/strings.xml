@@ -11,4 +11,10 @@
     //Registro
     <string name="Registro">Registro de Usuario</string>
     <string name="Volver">Volver</string>
+
+    //Inicio
+    <string name="Bienvenida">Bienvenido a TaskMaster</string>
+    <string name="Imagen_Inicio">Imagen de Inicio</string>
+    <string name="Entrar">Continuar</string>
+
 </resources>
