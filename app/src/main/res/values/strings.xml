@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TaskMaster</string>
+
+    <string name="Login">Inicio de Sesion</string>
+    <string name="Nombre">Nombre de Usuario</string>
+    <string name="Contrasena">Contraseña</string>
+    <string name="Ingresar">Ingresar</string>
+    <string name="Registrarse">Registrarse</string>
+
 </resources>

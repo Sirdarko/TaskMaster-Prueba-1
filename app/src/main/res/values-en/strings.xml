@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskMaster</string>
+    <string name="Login">Login</string>
+    <string name="Nombre">Username</string>
+    <string name="Contrasena">Password</string>
+    <string name="Ingresar">Login</string>
+    <string name="Registrarse">Register</string>
+</resources>
